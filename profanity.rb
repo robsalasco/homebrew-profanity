@@ -22,7 +22,6 @@ class Profanity < Formula
         system "./bootstrap.sh"
         system "./configure", "--prefix=#{prefix}"
         system "make", "PREFIX=#{prefix}", "install"
-
     end
 
   private

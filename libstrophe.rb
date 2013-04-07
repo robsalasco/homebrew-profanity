@@ -18,7 +18,6 @@ class Libstrophe < Formula
         system "./bootstrap.sh"
         system "./configure", "--prefix=#{prefix}"
         system "make install"
-
     end
 
   private
