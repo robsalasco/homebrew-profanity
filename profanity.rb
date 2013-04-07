@@ -12,7 +12,8 @@ class Profanity < Formula
   depends_on 'curl' => :build
   depends_on 'glib' => :build
   depends_on 'pkg-config' => :build
-  depends_on 'expat' => :build
+  depends_on 'expat'
+  depends_on 'libstrophe'
 
 
 
