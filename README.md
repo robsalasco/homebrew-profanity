@@ -1,7 +1,7 @@
 homebrew-profanity
 ==================
 
-Howto use:
+How-to use:
 
 * `brew tap robrooms/homebrew-profanity`
 * `brew install libstrophe --HEAD`
