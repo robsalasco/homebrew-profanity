@@ -14,14 +14,20 @@ class Profanity < Formula
   depends_on 'pkg-config' => :build
   depends_on 'expat'
   depends_on 'libstrophe'
+  depends_on 'ncurses'
 
 
 
   def install
-    generate_version    
-        inreplace 'configure.ac', 'AC_CHECK_LIB([ncursesw], [main], [],', 'AC_CHECK_LIB([ncurses], [main], [],'
+        generate_version
+        ENV.append 'ncursesw_LIBS', "-L#{HOMEBREW_PREFIX}/opt/ncurses/lib"
+        ENV.append 'ncursesw_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/ncurses/include"
+        ENV.append 'ncurses_LIBS', "-L#{HOMEBREW_PREFIX}/opt/ncurses/lib"
+        ENV.append 'ncurses_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/ncurses/include"
+        ENV.append 'curl_LIBS', "-L#{HOMEBREW_PREFIX}/opt/curl/lib"
+        ENV.append 'curl_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/curl/include"
         system "./bootstrap.sh"
-        system "./configure", "--prefix=#{prefix}"
+        system "./configure"
         system "make", "PREFIX=#{prefix}", "install"
     end
 
