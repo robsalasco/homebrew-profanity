@@ -21,6 +21,8 @@ class Profanity < Formula
 
   def install
         generate_version
+        ENV.append 'LIBS', "-L#{HOMEBREW_PREFIX}/opt/gettext/lib"
+        ENV.append 'CFLAGS', "-L#{HOMEBREW_PREFIX}/opt/gettext/include"
         ENV.append 'ncursesw_LIBS', "-L#{HOMEBREW_PREFIX}/opt/ncurses/lib"
         ENV.append 'ncursesw_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/ncurses/include"
         ENV.append 'ncurses_LIBS', "-L#{HOMEBREW_PREFIX}/opt/ncurses/lib"
