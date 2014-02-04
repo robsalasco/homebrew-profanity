@@ -1,7 +1,7 @@
 require 'formula'
 
 class Profanity < Formula
-  head 'https://github.com/boothj5/profanity.git', :using => :git  
+  head 'https://github.com/boothj5/profanity.git', :branch => "brew", :using => :git
 
   homepage 'https://github.com/boothj5/profanity'
 
@@ -15,6 +15,7 @@ class Profanity < Formula
   depends_on 'expat'
   depends_on 'libstrophe'
   depends_on 'ncurses'
+  depends_on 'libotr'
 
 
 
@@ -27,7 +28,7 @@ class Profanity < Formula
         ENV.append 'curl_LIBS', "-L#{HOMEBREW_PREFIX}/opt/curl/lib"
         ENV.append 'curl_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/curl/include"
         system "./bootstrap.sh"
-        system "./configure"
+        system "./configure --enable-otr"
         system "make", "PREFIX=#{prefix}", "install"
     end
 
