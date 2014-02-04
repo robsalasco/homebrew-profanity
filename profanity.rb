@@ -18,7 +18,6 @@ class Profanity < Formula
   depends_on 'libotr'
 
 
-
   def install
         generate_version
         ENV.append 'LIBS', "-L#{HOMEBREW_PREFIX}/opt/gettext/lib"
