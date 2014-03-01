@@ -1,7 +1,7 @@
 require 'formula'
 
 class Libstrophe < Formula
-  head 'https://github.com/metajack/libstrophe.git', :using => :git  
+  head 'https://github.com/strophe/libstrophe.git', :using => :git
 
   homepage 'http://strophe.im/libstrophe'
 
@@ -10,6 +10,7 @@ class Libstrophe < Formula
   depends_on 'libtool' => :build
   depends_on 'pkg-config' => :build
   depends_on 'expat' => :build
+  depends_on 'check' => :build
 
 
 
@@ -32,7 +33,7 @@ class Libstrophe < Formula
   end
 
   def git_cache
-    @downloader.cached_location
+    @active_spec.downloader.cached_location
   end
 
 end
