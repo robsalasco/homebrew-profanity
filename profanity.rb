@@ -45,7 +45,7 @@ class Profanity < Formula
   end
 
   def git_cache
-    @downloader.cached_location
+    @active_spec.downloader.cached_location
   end
 
 end
