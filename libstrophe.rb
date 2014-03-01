@@ -1,7 +1,7 @@
 require 'formula'
 
 class Libstrophe < Formula
-  head 'https://github.com/metajack/libstrophe.git', :using => :git
+  head 'https://github.com/strophe/libstrophe.git', :using => :git
 
   homepage 'http://strophe.im/libstrophe'
 
