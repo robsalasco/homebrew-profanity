@@ -16,6 +16,7 @@ class Profanity < Formula
   depends_on 'libstrophe'
   depends_on 'ncurses'
   depends_on 'libotr'
+  depends_on 'terminal-notifier'
 
 
   def install
@@ -29,6 +30,7 @@ class Profanity < Formula
         ENV.append 'curl_LIBS', "-L#{HOMEBREW_PREFIX}/opt/curl/lib"
         ENV.append 'curl_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/curl/include"
         system "./bootstrap.sh"
+        system "echo $PATH"
         system "./configure --enable-otr"
         system "make", "PREFIX=#{prefix}", "install"
     end
