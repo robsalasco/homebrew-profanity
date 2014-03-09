@@ -1,7 +1,7 @@
 require 'formula'
 
 class Profanity < Formula
-  head 'https://github.com/boothj5/profanity.git', :branch => "brew", :using => :git
+  head 'https://github.com/boothj5/profanity.git', :using => :git
 
   homepage 'https://github.com/boothj5/profanity'
 
@@ -29,8 +29,9 @@ class Profanity < Formula
         ENV.append 'ncurses_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/ncurses/include"
         ENV.append 'curl_LIBS', "-L#{HOMEBREW_PREFIX}/opt/curl/lib"
         ENV.append 'curl_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/curl/include"
+        system "cp -r #{git_cache}/.git .git"
         system "./bootstrap.sh"
-        system "./configure --enable-otr"
+        system "./configure"
         system "make", "PREFIX=#{prefix}", "install"
     end
 
