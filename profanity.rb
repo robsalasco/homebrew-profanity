@@ -17,6 +17,7 @@ class Profanity < Formula
   depends_on 'ncurses'
   depends_on 'libotr'
   depends_on 'terminal-notifier'
+  depends_on 'gnutls'
 
 
   def install
