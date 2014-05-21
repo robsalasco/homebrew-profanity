@@ -6,6 +6,7 @@ class Profanity < Formula
   homepage 'https://github.com/boothj5/profanity'
 
   depends_on 'autoconf' => :build
+  depends_on 'autoconf-archive' => :build
   depends_on 'automake' => :build
   depends_on 'libtool' => :build
   depends_on 'openssl' => :build
@@ -17,7 +18,7 @@ class Profanity < Formula
   depends_on 'ncurses'
   depends_on 'libotr'
   depends_on 'terminal-notifier'
-  depends_on 'gnutls'
+  depends_on 'libgcrypt'
 
 
   def install
