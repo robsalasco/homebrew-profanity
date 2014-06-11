@@ -14,7 +14,6 @@ class Profanity < Formula
   depends_on 'pkg-config' => :build
   depends_on 'expat'
   depends_on 'libstrophe'
-  depends_on 'ncurses'
   depends_on 'libotr'
   depends_on 'terminal-notifier'
 
