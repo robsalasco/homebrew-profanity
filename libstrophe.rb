@@ -33,7 +33,7 @@ class Libstrophe < Formula
   end
 
   def git_cache
-    @active_spec.downloader.cached_location
+    cached_download
   end
 
 end
