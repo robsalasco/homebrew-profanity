@@ -29,8 +29,8 @@ class Profanity < Formula
         ENV.append 'curl_LIBS', "-L#{HOMEBREW_PREFIX}/opt/curl/lib"
         ENV.append 'curl_CFLAGS',"-I#{HOMEBREW_PREFIX}/opt/curl/include"
         system "cp -r #{git_cache}/.git .git"
-        system "./bootstrap.sh"
-        system "./configure"
+        system "./bootstrap.sh --prefix=#{prefix}"
+        system "./configure --prefix=#{prefix}"
         system "make", "PREFIX=#{prefix}", "install"
     end
 
